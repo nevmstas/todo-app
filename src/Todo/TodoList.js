@@ -6,7 +6,7 @@ import TodoItem from './TodoItem'
 const styles = {
     div: {
         dysplay: 'flex',
-        justifyContent: 'center',        
+        justifyContent: 'center'     
     }
     
 }

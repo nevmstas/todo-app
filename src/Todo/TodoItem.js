@@ -8,10 +8,11 @@ const styles = {
         flexWrap: 'wrap',
         justifyContent: 'space-between',
         alingItems: 'center',
+        background: 'white',
         
         border: '1px solid #ccc',
         padding: '.5rem 1rem',
-        borderRadius:'4px',
+        borderRadius:'10px',
         marginBottom: '.5rem',
 
 

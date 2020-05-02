@@ -30,8 +30,8 @@ function AddTodo({onCreate}) {
 
     return(
         <form style = {{marginBottom:'1rem'}} onSubmit={submitHandler}>
-            <input {...input.bind}/>
-            <button type='submit'>Add todo</button>
+            <input type='text' {...input.bind}/>
+            <button className={'addBtn'} type='submit'>+</button>
         </form>
     )
 }
