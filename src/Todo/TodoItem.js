@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import PropTypes from 'prop-types'
-
+import Context from '../context'
 
 const styles = {
     div: {
@@ -12,7 +12,8 @@ const styles = {
         border: '1px solid #ccc',
         padding: '.5rem 1rem',
         borderRadius:'4px',
-        marginBottom: '.5rem'
+        marginBottom: '.5rem',
+
 
     },
     input:{
@@ -22,18 +23,26 @@ const styles = {
 
 const TodoItem = ({ todo, index, onChange }) =>{
     console.log('lulw', todo)
+
+    const {removeTodo} = useContext(Context)
+
+    const classes = []
+
+    if(todo.completed){
+        classes.push('done')
+    }
+    
     return (
-
-    <div style = {styles.div}>
-            <input style={styles.input} 
-            type='checkbox'
-            onChange={() => onChange(todo.id)}/>
-            <strong>{index + 1}</strong>
-            &nbsp;
-            {todo.title}
-            <button className='rm'>Remove</button>
-    </div>
-
+    <div className ={classes.join('')} style = {styles.div} >
+                <input style={styles.input} 
+                checked={todo.completed}
+                type='checkbox'
+                onChange={() => onChange(todo.id)}/>
+                <strong>{index + 1}</strong>
+                &nbsp;
+                {todo.title}
+                <button className='rm' onClick={removeTodo.bind(null, todo.id)}>Remove</button>
+        </div>
     )
 }
 

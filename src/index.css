@@ -36,3 +36,9 @@ code {
   background-color: pink;
   color: white;
 }
+
+
+.done{
+  text-decoration: line-through;
+}
+
